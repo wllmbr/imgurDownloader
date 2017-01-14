@@ -5,7 +5,7 @@ import time
 def makeImage(url):
 	#Get the name of the image
 	address = re.split(r"[\./]*",url)
-	print  address
+	#print  address
 	title = address[3]
 	type = address[4]
 	name = "%s.%s" % (title,type)
@@ -47,7 +47,7 @@ def driver():
 	print "Found %d targets. Starting download." % len(urlListing)
 	for i in range(0,len(urlListing)):
 		progress = i/len(urlListing)
-		print "Progress: %.1f%%" % progress
+		print "\tProgress: %.1f%%" % progress,
 		makeImage(urlListing[i])
 		time.sleep(0.1)
 		
